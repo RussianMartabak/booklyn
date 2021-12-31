@@ -101,6 +101,9 @@ button:hover{
 .red{
     background-color: red;
 }
+.green{
+    background-color: green;
+}
 
 .buttons > p{
     color: red;
