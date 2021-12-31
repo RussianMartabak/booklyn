@@ -51,7 +51,7 @@ form{
 }
 
 button{
-    width: 80px;
+    width: 100px;
     color: white;
     border: none; 
     font-weight: bold;
@@ -67,6 +67,30 @@ button:hover{
     margin: auto;
     margin-top: 32px;
     background-color: #2C4C7B;
+}
+
+.list{
+    min-height: calc(100vh - 32px);
+   
+}
+.list__content,
+.list > h2,
+.number{
+    margin: 32px;
+}
+.list__content__item{
+    display: flex;
+}
+.number{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.desc{
+    flex:1;
     
-    
+}
+.desc > h3,
+.desc > p{
+    margin: 8px 32px;
 }
