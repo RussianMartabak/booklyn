@@ -9,7 +9,23 @@ body{
 
 .main-section{
     height: 100vh;
-    
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: rgb(0, 0, 0, 0.4);
+    display: none;
+}
+
+.center{
+    text-align: center;
+}
+
+.main-input{
+    border: black 2px solid;
+    width: fit-content;
+    margin: auto;
+    padding: 32px;
+    background-color: white;
 }
 
 .main-section__header{
@@ -26,6 +42,7 @@ body{
 .main-section p,
 .main-section h2{
     text-align: center;
+    
 }
 
 .main-section h2{
@@ -62,6 +79,9 @@ button{
 button:hover{
     cursor: pointer;
 }
+.blue{
+    background-color: #2C4C7B;
+}
 #add{
     display: block;
     margin: auto;
@@ -70,7 +90,7 @@ button:hover{
 }
 
 .list{
-    min-height: calc(100vh - 32px);
+    min-height: calc(100vh - 107px);
    
 }
 .list__content,

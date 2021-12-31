@@ -1,5 +1,7 @@
 const addButton = document.querySelector('#add');
 const listContent = document.querySelector('.list__content');
+const openModal = document.querySelector('#openmodal');
+const modal = document.querySelector('#modal')
 
 let title;
 let author;
@@ -7,6 +9,7 @@ let pages;
 let books = [];
 
 addButton.addEventListener('click', addBook);
+openModal.addEventListener('click', e => modal.style.cssText = 'display: block');
 
 function addBook(){
     if(!isValid()){
@@ -19,6 +22,7 @@ function addBook(){
     loadList();
     refreshEventListeners();
     document.forms[0].reset();
+    modal.style.cssText = 'display: none';
     return;
 }
 

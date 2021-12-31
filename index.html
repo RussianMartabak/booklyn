@@ -12,30 +12,36 @@
     <title>Booklyn</title>
 </head>
 <body>
-    <div class='main-section'>
-        <div class='main-section__header'>
-            Booklyn
+    <div class='main-section__header'>
+        Booklyn
+    </div>
+    <div class='main-section' id='modal'>
+        <div class='main-input'>
+            <h2>Add a book to your reading list</h2>
+            
+            <form>
+                <div class='form__input'>
+                    <label for='title' class='labels' >Title</label><br>
+                    <input type='text' id='title' class='field' autocomplete="off">
+                </div>
+                <div class='form__input'>
+                    <label for='author' class='labels'>Author</label><br>
+                    <input type='text' id='author' class='field' autocomplete="off">
+                </div>
+                <div class='form__input'>
+                    <label for='pages' class='labels'>Pages</label><br>
+                    <input type='text' id='pages' class='field' autocomplete="off">
+                </div>
+            </form>
+            <button id='add'>Add</button>
         </div>
-        <h2>What Books Are You Reading?</h2>
-        <p>Keep track of your books by adding a book to your reading list</p>
-        <form>
-            <div class='form__input'>
-                <label for='title' class='labels' >Title</label><br>
-                <input type='text' id='title' class='field' autocomplete="off">
-            </div>
-            <div class='form__input'>
-                <label for='author' class='labels'>Author</label><br>
-                <input type='text' id='author' class='field' autocomplete="off">
-            </div>
-            <div class='form__input'>
-                <label for='pages' class='labels'>Pages</label><br>
-                <input type='text' id='pages' class='field' autocomplete="off">
-            </div>
-        </form>
-        <button id='add'>Add</button>
     </div>
     <section class='list'>
-        <h2>Your Reading List</h2>
+        <div class='center'>
+            <h2>What Books Are You Reading?</h2>
+            <p>Keep track of your books by adding a book to your reading list</p>
+            <button class='blue' id='openmodal'>Add</button>
+        </div>
         <div class='list__content'>
             <!-- this is must be generated using JS-->
             
