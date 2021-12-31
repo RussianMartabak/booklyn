@@ -87,10 +87,30 @@ button:hover{
 }
 
 .desc{
+    display: flex;
     flex:1;
+    flex-direction: column;
+    justify-content: center;
     
 }
 .desc > h3,
 .desc > p{
     margin: 8px 32px;
+}
+
+.red{
+    background-color: red;
+}
+
+.buttons > p{
+    color: red;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.buttons > p:hover{
+    cursor: pointer;
 }
