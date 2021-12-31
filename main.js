@@ -31,35 +31,45 @@ function Book(title, author, pages, read){
 }
 
 function refreshEventListeners(){
-    let readStatus = document.querySelectorAll('button');
-    console.log(readStatus);
-    readStatus.forEach(el => {
-        if (!el.classList.contains('read-status'))
-            el.addEventListener('click', e => {
-            let button = e.target;
-            
-            let index = parseInt(button.getAttribute('data-index'));
-            if (!books[index - 1.].read){
-            books[index - 1].read = true;
-            button.classList.add('green');
-            button.textContent = 'Read';
-        } else {
-            books[index - 1].read = false;
-            button.classList.remove('green');
-            button.textContent = 'Not Read';
-        }
-    })})
-
-    let removeButtons = document.querySelectorAll('#remove');
+    console.log(books.length);
+    if(books.length === 0) return;
+    let removeButtons = document.querySelectorAll('.remove');
     removeButtons.forEach(e => e.addEventListener('click', e => {
         let button = e.target;
-        console.log(button);
+        
         let index = parseInt(button.getAttribute('data-index'));
         books.splice(index - 1, 1);
+        console.log(`from remove books are = ${books}`)
         loadList();
+        refreshEventListeners();//again so it updated after removal. maybe this is quite ugly, lol
+        //probably better to add a different function for removal but js won't allow pass parameter
+        //from event listener to external function
         
     }))
     
+    
+    let readStatus = document.querySelectorAll('button');
+    console.log(readStatus);
+    readStatus.forEach(el => {
+        if (el.classList.contains('read-status')){
+            console.log(true);
+            el.addEventListener('click', e => {
+                let button = e.target;
+                console.log(`button = ${button}`);
+                let index = button.getAttribute('data-index');
+                console.log(`books = ${index}`);
+                if (!books[index - 1].read){
+                    books[index - 1].read = true;
+                    button.classList.add('green');
+                    button.textContent = 'Read';
+                } else {
+                    books[index - 1].read = false;
+                    button.classList.remove('green');
+                    button.textContent = 'Not Read';
+                }
+            })
+        };
+    })          
 }
 
 function loadList(){
@@ -119,7 +129,7 @@ function makeListItem(order, book){
     div = document.createElement('div');
     div.classList.add('buttons');
     let button = document.createElement('button');
-    button.setAttribute('id', 'read-status');
+    button.setAttribute('class', 'read-status');
     if (!book.read) {
         button.classList.add('red');
         button.textContent = 'Not Read';
@@ -132,7 +142,7 @@ function makeListItem(order, book){
     div.appendChild(button);
 
     p = document.createElement('p');
-    p.setAttribute('id', 'remove');
+    p.setAttribute('class', 'remove');
     p.textContent = 'Remove';
     p.setAttribute('data-index', order);
     div.appendChild(p);
