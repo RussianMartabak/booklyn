@@ -4,3 +4,4 @@ Live Preview: https://russianmartabak.github.io/booklyn/
   
 ![](https://i.imgur.com/XYOXkOU.png)
   
+This application can be improved significantly with an SQL database
